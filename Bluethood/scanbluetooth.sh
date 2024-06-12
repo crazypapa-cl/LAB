@@ -1,8 +1,11 @@
-#!/bin/bash
+# Cambiar el nombre del adaptador Bluetooth
+echo "Cambiando el nombre del adaptador Bluetooth a: $nuevo_nombre"
+bluetoothctl system-alias "$CRAZYLAB"
 
-adapter_info=$(bluetoothctl show)
-echo "Información del adaptador Bluetooth:"
-echo "$adapter_info"
+# Verificar el cambio de nombre
+nuevo_adapter_info=$(bluetoothctl show)
+echo "Información actualizada del adaptador Bluetooth:"
+echo "$nuevo_adapter_info"
 echo "-------------------------------------"
 
 # Habilitar el adaptador Bluetooth
